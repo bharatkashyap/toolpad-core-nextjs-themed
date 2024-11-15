@@ -13,7 +13,10 @@ export default (phase) => {
       serverActions: {
         // https://github.com/vercel/next.js/issues/58019
         // edit: updated to new key. Was previously `allowedForwardedHosts`
-        allowedOrigins: ["toolpad-core-nextjs-themed.vercel.app"],
+        allowedOrigins: [
+          "toolpad-core-nextjs-themed.vercel.app",
+          "deploy-preview-4415--mui-toolpad-docs.netlify.app",
+        ],
       },
     },
   };
