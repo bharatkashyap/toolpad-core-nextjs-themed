@@ -11,12 +11,9 @@ export default (phase) => {
       : `${process.env.BASE_URL}${process.env.BASE_PATH}`,
     experimental: {
       serverActions: {
+        // https://github.com/vercel/next.js/issues/58019
         // edit: updated to new key. Was previously `allowedForwardedHosts`
-        allowedOrigins: [
-          "https://deploy-preview-4415--mui-toolpad-docs.netlify.app",
-          "https://mui-toolpad-docs.netlify.app",
-          "https://mui.com",
-        ],
+        allowedOrigins: ["toolpad-core-nextjs-themed.vercel.app"],
       },
     },
   };
