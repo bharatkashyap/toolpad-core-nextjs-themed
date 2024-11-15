@@ -16,7 +16,7 @@ export default auth((req: NextRequest) => {
     const lastSegment = req.nextUrl.pathname.split("/").pop();
 
     const fullUrl = new URL(
-      `${process.env.BASE_PATH || ""}/${lastSegment}`,
+      `${process.env.BASE_PATH || ""}${lastSegment ? `/${lastSegment}` : ""}`,
       process.env.BASE_URL
     );
 
