@@ -15,7 +15,7 @@ const NAVIGATION: Navigation = [
   },
   {
     title: "Dashboard",
-    segment: "toolpad/core/templates/nextjs-dashboard/",
+    segment: "toolpad/core/templates/nextjs-dashboard",
     icon: <DashboardIcon />,
   },
   {
