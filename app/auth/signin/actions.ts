@@ -14,7 +14,8 @@ async function signIn(
         email: formData.get("email"),
         password: formData.get("password"),
       }),
-      redirectTo: callbackUrl ?? "/",
+      redirectTo:
+        callbackUrl ?? `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`,
     });
   } catch (error) {
     // The desired flow for successful sign in in all cases
