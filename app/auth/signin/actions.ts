@@ -9,18 +9,16 @@ async function signIn(
   callbackUrl?: string
 ) {
   try {
-    console.log(
-      "callbackUrl",
-      callbackUrl,
-      `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`
-    );
+    // Hosting this under a basepath, so "/" is never correct
+    if (!callbackUrl || callbackUrl === "/") {
+      callbackUrl = `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`;
+    }
     return await signInAction(provider.id, {
       ...(formData && {
         email: formData.get("email"),
         password: formData.get("password"),
       }),
-      redirectTo:
-        callbackUrl ?? `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`,
+      redirectTo: callbackUrl,
     });
   } catch (error) {
     // The desired flow for successful sign in in all cases
