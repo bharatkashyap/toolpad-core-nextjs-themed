@@ -27,6 +27,8 @@ async function signIn(
       throw error;
     }
 
+    console.error("Error", error);
+
     // Handle Auth.js errors
     if (error instanceof AuthError) {
       return {
