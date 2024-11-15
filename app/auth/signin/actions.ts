@@ -9,6 +9,11 @@ async function signIn(
   callbackUrl?: string
 ) {
   try {
+    console.log(
+      "callbackUrl",
+      callbackUrl,
+      `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`
+    );
     return await signInAction(provider.id, {
       ...(formData && {
         email: formData.get("email"),
