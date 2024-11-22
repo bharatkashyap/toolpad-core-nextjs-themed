@@ -46,6 +46,12 @@ export default function SignIn() {
           defaultValue: "@demo1",
         },
       }}
+      sx={{
+        "& form > .MuiStack-root": {
+          marginTop: "2rem",
+          rowGap: "1rem",
+        },
+      }}
       slots={{
         forgotPasswordLink: ForgotPasswordLink,
         signUpLink: SignUpLink,
