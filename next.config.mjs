@@ -16,6 +16,8 @@ export default (phase) => {
         allowedOrigins: [
           "toolpad-core-nextjs-themed.vercel.app",
           "deploy-preview-4415--mui-toolpad-docs.netlify.app",
+          "mui-toolpad-docs.netlify.app",
+          "mui.com",
         ],
       },
     },
