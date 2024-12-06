@@ -10,7 +10,7 @@ async function signIn(
 ) {
   try {
     // Hosting this under a basepath, so "/" is never correct
-    if (!callbackUrl) {
+    if (!callbackUrl || callbackUrl === "/") {
       callbackUrl = `${process.env.BASE_URL}${process.env.BASE_PATH || ""}`;
     }
     return await signInAction(provider.id, {

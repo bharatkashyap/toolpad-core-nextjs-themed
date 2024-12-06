@@ -6,9 +6,9 @@ export default (phase) => {
    * @type {import('next').NextConfig}
    */
   const nextConfig = {
-    // assetPrefix: isDev
-    // ? undefined
-    // : `${process.env.BASE_URL}${process.env.BASE_PATH}`,
+    assetPrefix: isDev
+      ? undefined
+      : `${process.env.BASE_URL}${process.env.BASE_PATH}`,
     experimental: {
       serverActions: {
         // https://github.com/vercel/next.js/issues/58019

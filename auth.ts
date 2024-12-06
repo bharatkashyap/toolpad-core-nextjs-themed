@@ -42,20 +42,8 @@ export const providerMap = providers.map((provider) => {
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
   secret: process.env.AUTH_SECRET,
-  // basePath: `${process.env.BASE_PATH}/api/auth`,
+  basePath: `${process.env.BASE_PATH}/api/auth`,
   pages: {
     signIn: "/auth/signin",
-  },
-  callbacks: {
-    authorized({ auth: session, request: { nextUrl } }) {
-      const isLoggedIn = !!session?.user;
-      const isPublicPage = nextUrl.pathname.startsWith("/public");
-
-      if (isPublicPage || isLoggedIn) {
-        return true;
-      }
-
-      return false; // Redirect unauthenticated users to login page
-    },
   },
 });
