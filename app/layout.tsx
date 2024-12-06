@@ -15,11 +15,11 @@ const NAVIGATION: Navigation = [
   },
   {
     title: "Dashboard",
-    segment: "toolpad/core/templates/nextjs-dashboard",
+    segment: "",
     icon: <DashboardIcon />,
   },
   {
-    segment: "toolpad/core/templates/nextjs-dashboard/orders",
+    segment: "orders",
     title: "Orders",
     icon: <ShoppingCartIcon />,
   },
