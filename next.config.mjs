@@ -15,6 +15,7 @@ export default (phase) => {
         // edit: updated to new key. Was previously `allowedForwardedHosts`
         allowedOrigins: [
           "toolpad-core-nextjs-themed.vercel.app",
+          "toolpad-core-nextjs-themed.netlify.app",
           "deploy-preview-4415--mui-toolpad-docs.netlify.app",
           "mui-toolpad-docs.netlify.app",
           "mui.com",
