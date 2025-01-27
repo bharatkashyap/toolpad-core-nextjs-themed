@@ -1,5 +1,6 @@
 import * as React from "react";
-import { AppProvider } from "@toolpad/core/nextjs";
+import type { Metadata } from "next";
+import { NextAppProvider } from "@toolpad/core/nextjs";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
@@ -30,6 +31,10 @@ const AUTHENTICATION = {
   signOut,
 };
 
+export const metadata: Metadata = {
+  title: "Toolpad Core + Next.js App",
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -43,14 +48,14 @@ export default async function RootLayout({
           basePath={`${process.env.BASE_PATH}/api/auth`}
         >
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <AppProvider
+            <NextAppProvider
               theme={theme}
               navigation={NAVIGATION}
               session={session}
               authentication={AUTHENTICATION}
             >
               {children}
-            </AppProvider>
+            </NextAppProvider>
           </AppRouterCacheProvider>
         </SessionProvider>
       </body>
