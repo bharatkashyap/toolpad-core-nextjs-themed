@@ -4,6 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 export default function CustomizedDataGrid({
   rows,
   columns,
+  ...rest
 }: {
   rows?: any;
   columns?: any;
@@ -11,9 +12,10 @@ export default function CustomizedDataGrid({
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <DataGrid
-        checkboxSelection
         rows={rows}
         columns={columns}
+        {...rest}
+        checkboxSelection
         getRowClassName={(params) =>
           params.indexRelativeToCurrentPage % 2 === 0 ? "even" : "odd"
         }
