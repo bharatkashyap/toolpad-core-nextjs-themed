@@ -94,14 +94,8 @@ export const inputsCustomizations: Components<Theme> = {
             style: {
               color: "white",
               backgroundColor: brand[300],
-              backgroundImage: `linear-gradient(to bottom, ${alpha(
-                brand[400],
-                0.8
-              )}, ${brand[500]})`,
-              boxShadow: `inset 0 2px 0 ${alpha(
-                brand[200],
-                0.2
-              )}, inset 0 -2px 0 ${alpha(brand[700], 0.4)}`,
+              backgroundImage: `linear-gradient(to bottom, ${alpha(brand[400], 0.8)}, ${brand[500]})`,
+              boxShadow: `inset 0 2px 0 ${alpha(brand[200], 0.2)}, inset 0 -2px 0 ${alpha(brand[700], 0.4)}`,
               border: `1px solid ${brand[500]}`,
               "&:hover": {
                 backgroundColor: brand[700],
@@ -223,15 +217,7 @@ export const inputsCustomizations: Components<Theme> = {
             },
           },
         ],
-      }),
-    },
-  },
-  // @ts-ignore TODO: MuiLoadingButton is not present in the default `theme`
-  MuiLoadingButton: {
-    styleOverrides: {
-      // @ts-ignore
-      root: ({ theme }) => ({
-        "& .MuiLoadingButton-loadingIndicator": {
+        "& .MuiButton-loadingIndicator": {
           color: gray[400],
           ...theme.applyStyles("dark", {
             color: gray[600],
@@ -388,7 +374,7 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: {
         border: "none",
-        marginTop: 8,
+        marginTop: 6,
       },
       input: {
         "&::placeholder": {
@@ -401,9 +387,9 @@ export const inputsCustomizations: Components<Theme> = {
   MuiInputLabel: {
     styleOverrides: {
       root: {
-        transform: "translate(4px, -16px) scale(0.75)",
+        transform: "translate(4px, -11px) scale(0.75)",
         [`&.${outlinedInputClasses.focused}`]: {
-          transform: "translate(4px, -17px) scale(0.75)",
+          transform: "translate(4px, -12px) scale(0.75)",
         },
       },
     },
@@ -470,7 +456,6 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         typography: theme.typography.caption,
-        marginTop: 8,
       }),
     },
   },
