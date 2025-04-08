@@ -26,10 +26,10 @@ const NAVIGATION: Navigation = [
     icon: <ShoppingCartIcon />,
   },
   {
-    segment: "employees",
+    segment: "toolpad/core/templates/nextjs-dashboard/employees",
     title: "Employees",
     icon: <PersonIcon />,
-    pattern: "employees{/:employeeId}*",
+    pattern: "toolpad/core/templates/nextjs-dashboard/employees{/:employeeId}*",
   },
 ];
 
