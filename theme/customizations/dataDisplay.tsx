@@ -17,6 +17,13 @@ export const dataDisplayCustomizations: Components<Theme> = {
       },
     },
   },
+  MuiListSubheader: {
+    styleOverrides: {
+      root: {
+        backgroundColor: "transparent",
+      },
+    },
+  },
   MuiListItem: {
     styleOverrides: {
       root: ({ theme }) => ({
@@ -38,6 +45,9 @@ export const dataDisplayCustomizations: Components<Theme> = {
             opacity: 1,
             backgroundColor: alpha(theme.palette.action.selected, 0.3),
             [`& .${svgIconClasses.root}`]: {
+              color: theme.palette.text.primary,
+            },
+            [`& .${typographyClasses.root}`]: {
               color: theme.palette.text.primary,
             },
             "&:focus-visible": {
@@ -75,6 +85,7 @@ export const dataDisplayCustomizations: Components<Theme> = {
       },
     },
   },
+
   MuiPaper: {
     styleOverrides: {
       root: ({ theme }) => ({
