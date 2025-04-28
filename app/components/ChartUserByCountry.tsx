@@ -1,79 +1,81 @@
-'use client';
-import * as React from 'react';
-import { PieChart } from '@mui/x-charts/PieChart';
-import { useDrawingArea } from '@mui/x-charts/hooks';
-import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+"use client";
+import * as React from "react";
+import { PieChart } from "@mui/x-charts/PieChart";
+import { useDrawingArea } from "@mui/x-charts/hooks";
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
 
-import { UsaFlag, BrazilFlag, GlobeFlag } from '../mocks/CustomIcons';
+import { UsaFlag, BrazilFlag, GlobeFlag } from "../mocks/CustomIcons";
 
 const data = [
-  { label: 'USA', value: 35000 },
-  { label: 'Brazil', value: 10000 },
-  { label: 'Other', value: 5000 },
+  { label: "USA", value: 35000 },
+  { label: "Brazil", value: 10000 },
+  { label: "Other", value: 5000 },
 ];
 
 const countries = [
   {
-    name: 'USA',
+    name: "USA",
     value: 70,
     flag: <UsaFlag />,
-    color: 'hsl(220, 25%, 45%)',
+    color: "hsl(220, 25%, 45%)",
   },
   {
-    name: 'Brazil',
+    name: "Brazil",
     value: 20,
     flag: <BrazilFlag />,
-    color: 'hsl(220, 25%, 30%)',
+    color: "hsl(220, 25%, 30%)",
   },
   {
-    name: 'Other',
+    name: "Other",
     value: 10,
     flag: <GlobeFlag />,
-    color: 'hsl(220, 25%, 20%)',
+    color: "hsl(220, 25%, 20%)",
   },
 ];
 
 interface StyledTextProps {
-  variant: 'primary' | 'secondary';
+  variant: "primary" | "secondary";
 }
 
-const StyledText = styled('text', {
-  shouldForwardProp: (prop) => prop !== 'variant',
+const StyledText = styled("text", {
+  shouldForwardProp: (prop) => prop !== "variant",
 })<StyledTextProps>(({ theme }) => ({
-  textAnchor: 'middle',
-  dominantBaseline: 'central',
+  textAnchor: "middle",
+  dominantBaseline: "central",
   fill: (theme.vars || theme).palette.text.secondary,
   variants: [
     {
       props: {
-        variant: 'primary',
+        variant: "primary",
       },
       style: {
         fontSize: theme.typography.h5.fontSize,
       },
     },
     {
-      props: ({ variant }) => variant !== 'primary',
+      props: ({ variant }) => variant !== "primary",
       style: {
         fontSize: theme.typography.body2.fontSize,
       },
     },
     {
       props: {
-        variant: 'primary',
+        variant: "primary",
       },
       style: {
         fontWeight: theme.typography.h5.fontWeight,
       },
     },
     {
-      props: ({ variant }) => variant !== 'primary',
+      props: ({ variant }) => variant !== "primary",
       style: {
         fontWeight: theme.typography.body2.fontWeight,
       },
@@ -104,23 +106,23 @@ function PieCenterLabel({ primaryText, secondaryText }: PieCenterLabelProps) {
 }
 
 const colors = [
-  'hsl(220, 20%, 65%)',
-  'hsl(220, 20%, 42%)',
-  'hsl(220, 20%, 35%)',
-  'hsl(220, 20%, 25%)',
+  "hsl(220, 20%, 65%)",
+  "hsl(220, 20%, 42%)",
+  "hsl(220, 20%, 35%)",
+  "hsl(220, 20%, 25%)",
 ];
 
 export default function ChartUserByCountry() {
   return (
     <Card
       variant="outlined"
-      sx={{ display: 'flex', flexDirection: 'column', gap: '8px', flexGrow: 1 }}
+      sx={{ display: "flex", flexDirection: "column", gap: "8px", flexGrow: 1 }}
     >
       <CardContent>
         <Typography component="h2" variant="subtitle2">
           Users by country
         </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <PieChart
             colors={colors}
             margin={{
@@ -135,34 +137,36 @@ export default function ChartUserByCountry() {
                 innerRadius: 75,
                 outerRadius: 100,
                 paddingAngle: 0,
-                highlightScope: { faded: 'global', highlighted: 'item' },
+                highlightScope: { fade: "global", highlight: "item" },
               },
             ]}
             height={260}
             width={260}
-            slotProps={{
-              legend: { hidden: true },
-            }}
+            hideLegend
           >
             <PieCenterLabel primaryText="50K" secondaryText="Total" />
           </PieChart>
         </Box>
         {countries.map((country, index) => (
-          <Stack key={index} direction="row" sx={{ alignItems: 'center', gap: 2, pb: 2 }}>
+          <Stack
+            key={index}
+            direction="row"
+            sx={{ alignItems: "center", gap: 2, pb: 2 }}
+          >
             {country.flag}
             <Stack sx={{ gap: 1, flexGrow: 1 }}>
               <Stack
                 direction="row"
                 sx={{
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
+                  justifyContent: "space-between",
+                  alignItems: "center",
                   gap: 2,
                 }}
               >
-                <Typography variant="body2" sx={{ fontWeight: '500' }}>
+                <Typography variant="body2" sx={{ fontWeight: "500" }}>
                   {country.name}
                 </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   {country.value}%
                 </Typography>
               </Stack>
