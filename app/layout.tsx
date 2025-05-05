@@ -17,19 +17,18 @@ const NAVIGATION: Navigation = [
   },
   {
     title: "Dashboard",
-    segment: "toolpad/core/templates/nextjs-dashboard",
     icon: <DashboardIcon />,
   },
   {
-    segment: "toolpad/core/templates/nextjs-dashboard/orders",
+    segment: "orders",
     title: "Orders",
     icon: <ShoppingCartIcon />,
   },
   {
-    segment: "toolpad/core/templates/nextjs-dashboard/employees",
+    segment: "employees",
     title: "Employees",
     icon: <PersonIcon />,
-    pattern: "toolpad/core/templates/nextjs-dashboard/employees{/:employeeId}*",
+    pattern: "employees{/:employeeId}*",
   },
 ];
 
