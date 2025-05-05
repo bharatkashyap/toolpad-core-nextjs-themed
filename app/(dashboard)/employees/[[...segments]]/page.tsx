@@ -13,7 +13,7 @@ export default function EmployeesCrudPage() {
     <Crud<Employee>
       dataSource={employeesDataSource}
       dataSourceCache={employeesCache}
-      rootPath="/employees"
+      rootPath="/toolpad/core/templates/nextjs-dashboard/employees"
       initialPageSize={20}
       defaultValues={{ title: "New Employee" }}
       slots={{
