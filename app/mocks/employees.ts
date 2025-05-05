@@ -12,7 +12,7 @@ export interface Employee extends DataModel {
   role: EmployeeRole;
 }
 
-const API_URL = `${process.env.BASE_URL}/api/employees`;
+const API_URL = `${process.env.NEXT_PUBLIC_BASE_URL}/api/employees`;
 
 export const employeesDataSource: DataSource<Employee> = {
   fields: [
