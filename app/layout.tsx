@@ -16,7 +16,7 @@ const NAVIGATION: Navigation = [
     title: "Main items",
   },
   {
-    title: "Dashboard",    
+    title: "Dashboard",
     icon: <DashboardIcon />,
   },
   {
